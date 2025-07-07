@@ -195,4 +195,7 @@ section {
   .impact-image {
     width: 300px;
   }
+  .logo img {
+  margin-left: -50px; /* You can change -20px to a bigger negative number if you want it even more left */
+}
 }
