@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Charity: Water | Turn Your Efforts Into Clean Water Stories</title>
   <!-- Google Fonts: clean, modern -->
-  <link href="https://fonts.googleapis.com/css2?family=Proxima Nova:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --yellow: #ffc907; /* Jerry Can Yellow */
@@ -15,11 +15,12 @@
 
     body {
       margin: 0;
-      font-family: 'Proxima Nova';
+      font-family: 'Montserrat', sans-serif;
       background-color: var(--cream);
       color: var(--black);
       line-height: 1.6;
       scroll-behavior: smooth;
+      font-size: 18px; /* increased base font size */
     }
 
     a {
@@ -49,40 +50,68 @@
     }
 
     .logo {
-      font-weight: bold;
-      font-size: 1.5rem;
-      color: var(--yellow);
+      display: flex;
+      align-items: center;
     }
 
-    .nav-cta {
+    .logo img {
+      height: 40px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      font-weight: 600;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--yellow);
+      transform: translateY(-2px);
+    }
+
+    .nav-links .nav-cta {
       background-color: var(--yellow);
       color: var(--black);
       padding: 10px 20px;
       border-radius: 5px;
-      font-weight: bold;
       transition: background-color 0.3s ease, transform 0.3s ease;
-      margin-top: 10px;
     }
 
-    .nav-cta:hover {
+    .nav-links .nav-cta:hover {
       background-color: #e6c200;
-      transform: translateY(-2px);
     }
 
-    .nav-cta:focus {
+    .nav-links .nav-cta:focus {
       outline: 2px dashed var(--yellow);
       outline-offset: 4px;
     }
 
-    @media (max-width: 500px) {
+    @media (max-width: 600px) {
       .container {
         flex-direction: column;
         align-items: flex-start;
       }
 
-      .nav-cta {
+      .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
         width: 100%;
+      }
+
+      .nav-links a {
+        width: 100%;
+        padding: 10px 0;
+      }
+
+      .nav-links .nav-cta {
         text-align: center;
+        width: 100%;
       }
     }
 
@@ -99,7 +128,7 @@
     }
 
     header p {
-      font-size: 1.5rem;
+      font-size: 1.7rem; /* bumped up from 1.5rem */
       max-width: 600px;
       margin: 0 auto 40px auto;
     }
@@ -149,13 +178,6 @@
       margin: 0 auto;
     }
 
-    .section h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 40px;
-      color: var(--yellow);
-    }
-
     .story {
       display: flex;
       flex-wrap: wrap;
@@ -183,10 +205,20 @@
 
     .story-text {
       flex: 1 1 400px;
+      text-align: center;
+    }
+
+    .story-text h2 {
+      font-size: 2rem;
+      color: var(--yellow);
+      margin-bottom: 20px;
     }
 
     .story-text p {
-      font-size: 1.1rem;
+      font-size: 1.3rem; /* was 1.2rem */
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
     }
 
     .how-it-works {
@@ -221,6 +253,10 @@
       margin-bottom: 15px;
     }
 
+    .step p {
+      font-size: 1.1rem;
+    }
+
     footer {
       text-align: center;
       padding: 40px 20px;
@@ -241,13 +277,13 @@
 
     @media (max-width: 992px) {
       header h1 { font-size: 2.5rem; }
-      header p { font-size: 1.3rem; }
+      header p { font-size: 1.5rem; }
       .section { padding: 60px 20px; }
     }
 
     @media (max-width: 768px) {
       header h1 { font-size: 2.2rem; }
-      header p { font-size: 1.2rem; }
+      header p { font-size: 1.3rem; }
       .story, .how-it-works { flex-direction: column; }
       .step { width: 90%; }
     }
@@ -258,8 +294,15 @@
   <!-- NAVBAR -->
   <nav>
     <div class="container">
-      <div class="logo">charity: water</div>
-      <a href="#donate" class="nav-cta">Donate</a>
+      <div class="logo">
+        <img src="cw_logo-2.png" alt="charity: water logo">
+      </div>
+      <div class="nav-links">
+        <a href="#our-work">Our Work</a>
+        <a href="#stories">Stories</a>
+        <a href="#get-involved">Get Involved</a>
+        <a href="#donate" class="nav-cta">Donate</a>
+      </div>
     </div>
   </nav>
 
@@ -269,15 +312,15 @@
     <p>And Watch It All Unfold</p>
     <a href="#donate" class="cta-button">Donate Now</a>
     <br/>
-    <img src="img/hero-image.jpg" alt="Hero Image Placeholder">
+    <img src="img/7735_Ethiopia_2019_CG-.png" alt="Hero image">
   </header>
 
   <!-- STORY SECTION -->
   <section class="section">
-    <h2>Your Impact</h2>
     <div class="story">
-      <img src="img/story-image.jpg" alt="Impact Story Image Placeholder">
+      <img src="img/charity_water_Tanzania_TaraShupePhotography_0149.png" alt="Impact Story">
       <div class="story-text">
+        <h2>Your Impact</h2>
         <p>Millions of people still drink unclean water daily. But you can change that – one act, one family, one story at a time. Follow the impact you create from start to finish, share the progress, and be a part of the generation that ends the water crisis for good.</p>
       </div>
     </div>
